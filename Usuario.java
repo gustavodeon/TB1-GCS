@@ -10,6 +10,9 @@ public class Usuario {
     this.administrador = administrador;
   }
 
+  public int getId() {return id;}
+  public String getNome() {return nome;}
+
   public boolean isAdministrador(){
     return this.administrador;
   }

@@ -14,8 +14,13 @@ public class Postagem {
     this.dataPostagem = dataPostagem;
     this.conteudo = conteudo;
     this.tags = tags;
-
   }
+
+  public Usuario getAutor() { return autor;}
+  public String getConteudo() {return conteudo;}
+  public ArrayList<Comentario> getComentarios() {return comentarios;}
+  public Date getDataPostagem() {return dataPostagem;}
+  public ArrayList<String> getTags() {return tags;}
 
   public boolean addComentario(Comentario comentario){
     // adiciona comentario
@@ -23,6 +28,10 @@ public class Postagem {
 
   public boolean removeComentario(int posicao, Usuario usuarioAtual) {
     //remove comentário
+  }
+
+  public String toString(){
+    return dataPostagem.toString() + ";" + autor.getId() + ";" + this.getConteudo();
   }
 }
 

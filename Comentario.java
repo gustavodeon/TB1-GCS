@@ -12,4 +12,8 @@ public class Comentario {
     this.conteudo = conteudo;
     this.dataPostagem = dataPostagem;
   }
+
+  public Usuario getAutor() {return autor;}
+  public Date getDataPostagem() {return dataPostagem;}
+  public String getConteudo() {return conteudo;}
 }
