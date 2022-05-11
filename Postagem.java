@@ -1,3 +1,8 @@
+package entidade;
+
+import entidade.Comentario;
+import entidade.Usuario;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -9,11 +14,14 @@ public class Postagem {
   private String conteudo;
   private ArrayList<String> tags;
 
-  public Postagem(Usuario autor, Date dataPostagem, String conteudo, ArrayList<String> tags){
+  private String link;
+
+  public Postagem(Usuario autor, Date dataPostagem, String conteudo, ArrayList<String> tags, String link){
     this.autor = autor;
     this.dataPostagem = dataPostagem;
     this.conteudo = conteudo;
     this.tags = tags;
+    this.link = link;
   }
 
   public Usuario getAutor() { return autor;}
