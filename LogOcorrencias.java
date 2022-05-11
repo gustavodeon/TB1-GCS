@@ -1,21 +1,33 @@
+import java.util.Date;
+import java.util.ArrayList;
+
 public class LogOcorrencias {
     // Método para registrar palavras proibidas, data e hora dentro de seu texto original
 
-    public static void main (String[] args){
+    private ArrayList<LogOcorrencias> log;
+    private Usuario usuario;
+    private Date dataPostagem;
+    private String conteudo;
 
+    public void logOcorrencias(Usuario autor, String conteudo, Date dataPostagem) {
+        this.usuario = autor;
+        this.conteudo = conteudo;
+        this.dataPostagem = dataPostagem;
+        log = new ArrayList<>();
+        log.add(autor, conteudo, dataPostagem);
     }
 
 
-    public logOcorrencias(){
+    public getLogOcorrencias(){
 
     }
 
-    public get.logOcorrencias(){
+    public setLogOcorrencias(){
 
     }
 
-    public set.logOcorrencias(){
-
+    public getOcorrenciaAutor() {
+        return usuario;
     }
 
     @Override
