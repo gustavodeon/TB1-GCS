@@ -1,8 +1,13 @@
+package entidade;
+
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Scanner;
 
 public class Blog {
-  ArrayList<Usuario> usuarios;
+  ArrayList<Usuario>  usuarios;
   ArrayList<Postagem> postagens;
+  Usuario             usuarioAtual;
 
   public Blog(){
     this.usuarios = new ArrayList<Usuario>();
@@ -87,12 +92,62 @@ public class Blog {
     }
   }
 
-  private boolean addUsuario(Usuario u){
+  private boolean addUsuario(){
     //adiciona pessoa
   }
 
-  private boolean addPostagem(Postagem p){
-    //adiciona postagem
+  private boolean addPostagem(){
+    Scanner sc = new Scanner(System.in);
+    String conteudo, link = null;
+    ArrayList<String> tags = new ArrayList<>();
+    int opcao;
+
+    //conteúdo
+    System.out.println("Escreva o conteúdo");
+    conteudo = sc.nextLine();
+
+    //tags
+    System.out.println("Gostaria de adicionar tags?");
+    System.out.println("1: sim | 0: não");
+    opcao = sc.nextInt();
+    if(opcao == 1)
+      tags = this.collectTags();
+
+    //link
+    System.out.println("Gostaria de adicionar link?");
+    System.out.println("1: sim | 0: não");
+    opcao = sc.nextInt();
+    if(opcao == 1){
+      System.out.println("Insira o link");
+      conteudo = sc.nextLine();
+      if(!link.startsWith("http")){
+        System.out.println("Formatação incorreta");
+        return false;
+      }
+    }
+
+    this.postagens.add(new Postagem(this.usuarioAtual, new Date(), conteudo, tags, link));
+    return true;
+  }
+
+  private ArrayList<String> collectTags() {
+    Scanner sc = new Scanner(System.in);
+    ArrayList<String> tags = new ArrayList<>();
+    int opcao;
+    System.out.println("insira a tag");
+    tags.add(sc.nextLine());
+    while(true){
+      System.out.println("quer adicionar mais tags");
+      System.out.println("1: sim | 0: não");
+      opcao = sc.nextInt();
+      if(opcao == 1){
+        System.out.println("Insira a tag:");
+        tags.add(sc.nextLine());
+      }
+      else{
+        return tags;
+      }
+    }
   }
 
   private boolean removePostagem(int posicao) {
