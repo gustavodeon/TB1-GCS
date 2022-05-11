@@ -23,8 +23,10 @@ public class LogOcorrencias {
 
     }
 
-    public getOcorrenciaAutor() {
-        return usuario;
+    public Log getOcorrenciaAutor(Usuario user) {
+        for (Log l:log){
+            if(log.g)
+        }
     }
 
     @Override
@@ -36,12 +38,23 @@ private class Log {
     protected Usuario usuario;
     protected Date dataPostagem;
     protected String conteudo;
+    protected int idLog;
 
 public void Log (Usuario autor, String conteudo, Date dataPostagem) {
         this.usuario = autor;
         this.conteudo = conteudo;
         this.dataPostagem = dataPostagem;
+        this.idLog = 
+}
 
+public Usuario getPorUsuario(){
+    return usuario;
+}
+public String getConteudo(){
+    return conteudo;
+}
+public Date getDataPost(){
+    return dataPostagem;
 }
 
 }
