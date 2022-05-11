@@ -1,3 +1,5 @@
+package entidade;
+
 import java.lang.reflect.Constructor;
 import java.util.Date;
 

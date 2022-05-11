@@ -1,3 +1,5 @@
+package entidade;
+
 public class Usuario {
 
   private int id;
