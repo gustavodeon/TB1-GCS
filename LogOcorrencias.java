@@ -11,6 +11,9 @@ public class LogOcorrencias {
         log.add(l);
     }
 
+    public int getQtdeOcorrenciasLog(){
+        return log.size();
+    }
 
     public getLogOcorrencias(){
 
