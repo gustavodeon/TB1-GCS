@@ -32,10 +32,12 @@ public class Postagem {
 
   public boolean addComentario(Comentario comentario){
     // adiciona comentario
+    return false;
   }
 
   public boolean removeComentario(int posicao, Usuario usuarioAtual) {
     //remove comentário
+    return false;
   }
 
   public String toString(){

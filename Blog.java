@@ -94,6 +94,7 @@ public class Blog {
 
   private boolean addUsuario(){
     //adiciona pessoa
+    return false;
   }
 
   private boolean addPostagem(){
@@ -152,6 +153,7 @@ public class Blog {
 
   private boolean removePostagem(int posicao) {
     //remove postagem
+    return false;
   }
 
 }
