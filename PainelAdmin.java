@@ -19,7 +19,7 @@ public class PainelAdmin {
 	}
 	
 	public int totalComentarios() {
-	
+
 		int contComentarios = 0;
 		for (Postagem p : postagens) {
 			contComentarios += p.getTotalComentarios();
@@ -51,7 +51,7 @@ public class PainelAdmin {
 		
 		Collections.sort(tempList, Comparator.comparing(Usuario::getTotalPostagens));
 		
-		
+		Collections.reverse(tempList);
 		
 		System.out.println("Top 5 com mais postagens: ");
 		for (int i = 0; i < 5 && i < tempList.size(); i++) {
@@ -66,6 +66,7 @@ public class PainelAdmin {
 		
 		Collections.sort(tempList, Comparator.comparing(Usuario::getTotalComentarios));
 		
+		Collections.reverse(tempList);
 		
 		System.out.println("Top 10 com mais comentarios: ");
 		
@@ -82,6 +83,7 @@ public class PainelAdmin {
 		
 		Collections.sort(tempList, Comparator.comparing(Postagem::getTotalComentarios));
 		
+		Collections.reverse(tempList);
 		
 		System.out.println("Top 5 postagens mais comentadas: ");
 		
@@ -101,10 +103,10 @@ public class PainelAdmin {
 		System.out.println("Painel Do Administrador: ");
 		System.out.println("1 - Listar Total de posts, total de comentarios, total de usuarios");
 		System.out.println("2 - Ranking dos top 5 usuarios com mais postagens");
-		System.out.println("3 - Ranking dos top 10 usuarios com mais comentários");
+		System.out.println("3 - Ranking dos top 10 usuarios com mais comentï¿½rios");
 		System.out.println("4 - Ranking das top 5 postagens mais comentadas");
 		System.out.println();
-		System.out.println("Digite a opção desejada:");
+		System.out.println("Digite a opï¿½ï¿½o desejada:");
 		
 		int op = sc.nextInt();
 		
@@ -117,7 +119,7 @@ public class PainelAdmin {
 		else if(op == 4)
 			opcao4();
 		else {
-			System.out.println("Digite uma opção valida");
+			System.out.println("Digite uma opï¿½ï¿½o valida");
 			System.out.println();
 			painel();
 		}
