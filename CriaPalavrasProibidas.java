@@ -1,5 +1,3 @@
-package entidade;
-
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;

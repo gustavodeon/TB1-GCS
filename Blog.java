@@ -1,5 +1,3 @@
-package entidade;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
@@ -27,6 +25,7 @@ public class Blog {
 
   private void mockData() {
     this.usuarios.add(new Usuario(1, "josé", true));
+    this.usuarios.add(new Usuario(2, "Felipe", false));
     this.postagens.add(new Postagem(this.usuarios.get(0), new Date(), "teste", null, null));
   }
 
@@ -82,7 +81,7 @@ public class Blog {
       }
 
       System.out.println("9: Pesquisa por tag | palavra-chave");
-      System.out.println("0: Trocar usuário");
+      System.out.println("10: Trocar usuário");
       opcao = sc.nextInt();
 
       switch (opcao) {
@@ -91,7 +90,17 @@ public class Blog {
           if (!addPostagem())
             System.out.println("Algo deu errado");
           break;
-
+          
+        case 8:
+        	if(usuarioAtual.isAdministrador()) {
+        		PainelAdmin p = new PainelAdmin(usuarios, postagens);
+        		p.painel();
+        	}else
+        		System.out.println("Voce precisa ser admin para essa funcao!!");
+        	break;
+        case 10:
+        	loginUsuario();
+        	break;
         case 0:
           System.exit(0);
       }
@@ -133,8 +142,9 @@ public class Blog {
         return false;
       }
     }
-
+    
     this.postagens.add(new Postagem(this.usuarioAtual, new Date(), conteudo, tags, link));
+    this.usuarioAtual.addPostagem();
     return true;
   }
 
@@ -161,6 +171,7 @@ public class Blog {
 
   private boolean removePostagem(int posicao) {
     //remove postagem
+	this.usuarioAtual.removePostagem();//arrumar posicao conforme a logica  
     return false;
   }
 
