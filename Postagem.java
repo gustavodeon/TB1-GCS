@@ -23,10 +23,12 @@ public class Postagem {
   public ArrayList<String> getTags() {return tags;}
 
   public boolean addComentario(Comentario comentario){
+    return false;
     // adiciona comentario
   }
 
   public boolean removeComentario(int posicao, Usuario usuarioAtual) {
+    return false;
     //remove comentário
   }
 

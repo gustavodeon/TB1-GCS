@@ -14,14 +14,17 @@ public class Blog {
   }
 
   private boolean addUsuario(Usuario u){
+    return false;
     //adiciona pessoa
   }
 
   private boolean addPostagem(Postagem p){
+    return false;
     //adiciona postagem
   }
 
   private boolean removePostagem(int posicao) {
+    return false;
     //remove postagem
   }
 
