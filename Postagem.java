@@ -18,6 +18,7 @@ public class Postagem {
     this.tags = tags;
     this.link = link;
     this.likes = 0;
+    this.comentarios = new ArrayList<Comentario>();
   }
 
   public Usuario getAutor() { return autor;}
@@ -30,15 +31,15 @@ public class Postagem {
   public int getLikes() { return likes; }
 
   public boolean addComentario(Comentario comentario){
-    // adiciona comentario
-	this.autor.addComentario();//arrumar posicao conforme a logica  
+	  comentarios.add(comentario);
+	  comentario.getAutor().addComentario();//arrumar posicao conforme a logica  
     return false;
   }
 
   public boolean removeComentario(int posicao, Usuario usuarioAtual) {
     //remove comentário
 	  
-	this.autor.removeComentario();//arrumar posicao conforme a logica  
+	getComentarios().get(posicao).getAutor().removeComentario();//arrumar posicao conforme a logica  
     return false;
   }
 
