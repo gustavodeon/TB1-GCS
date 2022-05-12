@@ -26,7 +26,63 @@ public class Blog {
   private void mockData() {
     this.usuarios.add(new Usuario(1, "josÃ©", true));
     this.usuarios.add(new Usuario(2, "Felipe", false));
-    this.postagens.add(new Postagem(this.usuarios.get(0), new Date(), "teste", null, null));
+    this.usuarios.add(new Usuario(3, "Pedro", false));
+    this.usuarios.add(new Usuario(4, "Otavio", false));
+    this.usuarios.add(new Usuario(5, "Irving", true));
+    this.usuarios.add(new Usuario(6, "José", true));
+    Postagem p1 = new Postagem(this.usuarios.get(0), new Date(), "Conteudo da postagem 1", null, null);
+    this.postagens.add(p1);
+    Postagem p2 = new Postagem(this.usuarios.get(3), new Date(), "Conteudo da postagem 2", null, null);
+    this.postagens.add(p2);
+    Postagem p3 = new Postagem(this.usuarios.get(2), new Date(), "Conteudo da postagem 3", null, null);
+    this.postagens.add(p3);
+    Postagem p4 = new Postagem(this.usuarios.get(5), new Date(), "Conteudo da postagem 4", null, null);
+    this.postagens.add(p4);
+    Postagem p5 = new Postagem(this.usuarios.get(5), new Date(), "Conteudo da postagem 5", null, null);
+    this.postagens.add(p5);
+    Postagem p6 = new Postagem(this.usuarios.get(4), new Date(), "Conteudo da postagem 6", null, null);
+    this.postagens.add(p6);
+    Postagem p7 = new Postagem(this.usuarios.get(1), new Date(), "Conteudo da postagem 7", null, null);
+    this.postagens.add(p7);
+    Postagem p8 = new Postagem(this.usuarios.get(3), new Date(), "Conteudo da postagem 8", null, null);
+    this.postagens.add(p8);
+    Postagem p9 = new Postagem(this.usuarios.get(4), new Date(), "Conteudo da postagem 9", null, null);
+    this.postagens.add(p9);
+    Postagem p10 = new Postagem(this.usuarios.get(5), new Date(), "Conteudo da postagem 10", null, null);
+    this.postagens.add(p10);
+    Comentario c1 = new Comentario(this.usuarios.get(2),"Comentario 1", new Date());
+    Comentario c2 = new Comentario(this.usuarios.get(3),"Comentario 2", new Date());
+    Comentario c3 = new Comentario(this.usuarios.get(2),"Comentario 3", new Date());
+    Comentario c4 = new Comentario(this.usuarios.get(3),"Comentario 4", new Date());
+    Comentario c5 = new Comentario(this.usuarios.get(2),"Comentario 5", new Date());
+    Comentario c6 = new Comentario(this.usuarios.get(3),"Comentario 6", new Date());
+    Comentario c7 = new Comentario(this.usuarios.get(2),"Comentario 7", new Date());
+    Comentario c8 = new Comentario(this.usuarios.get(3),"Comentario 8", new Date());
+    Comentario c9 = new Comentario(this.usuarios.get(2),"Comentario 9", new Date());
+    Comentario c10 = new Comentario(this.usuarios.get(3),"Comentario 10", new Date());
+    Comentario c11 = new Comentario(this.usuarios.get(3),"Comentario 11", new Date());
+    Comentario c12 = new Comentario(this.usuarios.get(3),"Comentario 12", new Date());
+    Comentario c13 = new Comentario(this.usuarios.get(3),"Comentario 13", new Date());
+    Comentario c14 = new Comentario(this.usuarios.get(3),"Comentario 14", new Date());
+    c1.addlike();
+    c1.addlike();
+    p1.addComentario(c1);
+    p2.addComentario(c2);
+    p3.addComentario(c3);
+    p4.addComentario(c4);
+    p5.addComentario(c5);
+    p6.addComentario(c6);
+    p7.addComentario(c7);
+    p8.addComentario(c8);
+    p9.addComentario(c9);
+    p10.addComentario(c10);
+    p5.addComentario(c11);
+    p7.addComentario(c12);
+    p3.addComentario(c13);
+    p8.addComentario(c14);
+    
+  
+    
   }
 
   private void loginUsuario() {
