@@ -1,5 +1,3 @@
-package entidade;
-
 import java.util.ArrayList;
 
 public class EncontraPalavrasProibidas {

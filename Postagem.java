@@ -1,8 +1,3 @@
-package entidade;
-
-import entidade.Comentario;
-import entidade.Usuario;
-
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -29,14 +24,18 @@ public class Postagem {
   public ArrayList<Comentario> getComentarios() {return comentarios;}
   public Date getDataPostagem() {return dataPostagem;}
   public ArrayList<String> getTags() {return tags;}
+  public int getTotalComentarios() { return getComentarios() == null ? 0 : getComentarios().size(); }
 
   public boolean addComentario(Comentario comentario){
     // adiciona comentario
+	this.autor.addComentario();//arrumar posicao conforme a logica  
     return false;
   }
 
   public boolean removeComentario(int posicao, Usuario usuarioAtual) {
     //remove comentário
+	  
+	this.autor.removeComentario();//arrumar posicao conforme a logica  
     return false;
   }
 

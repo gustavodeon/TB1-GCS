@@ -1,77 +1,100 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class PainelAdmin {
+	private ArrayList<Usuario>  usuarios;
+    private ArrayList<Postagem> postagens;
 	
-	public static int totalPost(){
+    public PainelAdmin(ArrayList<Usuario> usuarios, ArrayList<Postagem> postagens) {
+    	this.usuarios = usuarios;
+		this.postagens = postagens;
+    }
+    
+	public int totalPost(){
 		
-		//logica pra pegar total de post
-		return 0;
+		return postagens.size();
 	}
 	
-	public static int totalComentarios() {
+	public int totalComentarios() {
 	
-		//logica pra pegar total de comentarios
-		return 0;
+		int contComentarios = 0;
+		for (Postagem p : postagens) {
+			contComentarios += p.getTotalComentarios();
+		}
+				
+		return contComentarios;
 	}
 	
-	public static int totalUsuarios() {
-		
-		//Logica pra pegar total de usuarios
-		return 0;
+	public int totalUsuarios() {
+	
+		return usuarios.size();
 	}
 	
 	
-	public static void opcao1() {
+	public void opcao1() {
 		
-		System.out.println("Total de post: " + totalPost());
-		System.out.println("Total de Comentarios: "+ totalComentarios());
-		System.out.println("Total de Usuarios: "+ totalUsuarios());
+		System.out.println("Total de post: " + this.totalPost());
+		System.out.println("Total de Comentarios: "+ this.totalComentarios());
+		System.out.println("Total de Usuarios: "+ this.totalUsuarios());
 		System.out.println();
 		
 	}
 	
 	
-	public static void opcao2() {
+	public void opcao2() {
 		
-		//logica pra pegar top 5 users com mais postagens
 		
-		String[] top5Ex = {"Felipe","João", "Pedro","Afonso", "José"};
+		ArrayList<Usuario> tempList = usuarios;
+		
+		Collections.sort(tempList, Comparator.comparing(Usuario::getTotalPostagens));
+		
+		
+		
 		System.out.println("Top 5 com mais postagens: ");
-		for (int i = 0; i < top5Ex.length; i++) {
-			System.out.println(i+1 +" - "+ top5Ex[i]);
+		for (int i = 0; i < 5 && i < tempList.size(); i++) {
+			System.out.println(i+1 +" - "+ tempList.get(i).getNome() + " - " + tempList.get(i).getTotalPostagens());
 		}
 		System.out.println();
 	}
 	
-	public static void opcao3() {
+	public void opcao3() {
 		
-		//logica pra pegar top 10 users com mais Comentarios
+		ArrayList<Usuario> tempList = usuarios;
 		
-		String[] top5Ex = {"Felipe", "João", "Pedro", "Afonso", "José", "Bruno", "Ana", "Livia", "Carol","Lucas"};
+		Collections.sort(tempList, Comparator.comparing(Usuario::getTotalComentarios));
+		
+		
 		System.out.println("Top 10 com mais comentarios: ");
 		
-		for (int i = 0; i < top5Ex.length; i++) {
-			System.out.println(i+1 +" - "+ top5Ex[i]);
+		for (int i = 0; i < 10 && i < tempList.size(); i++) {
+			System.out.println(i+1 +" - "+ tempList.get(i).getNome()+ " - "+ tempList.get(i).getTotalComentarios());
 		}
 		System.out.println();
 	}
 	
 	
-	public static void opcao4() {
+	public void opcao4() {
 		
-		//logica pra pegar top 5 postagens com mais comentarios
+		ArrayList<Postagem> tempList = postagens;
 		
-		String[] top5Ex = {"Agro é pop", "COVID", "BITCOIN", "BBB","E-Sports"};
+		Collections.sort(tempList, Comparator.comparing(Postagem::getTotalComentarios));
+		
+		
 		System.out.println("Top 5 postagens mais comentadas: ");
 		
-		for (int i = 0; i < top5Ex.length; i++) {
-			System.out.println(i+1 +" - "+ top5Ex[i]);
+		
+		for (int i = 0; i < 5; i++) {
+			System.out.println(i+1 +" - "+ tempList.get(i).getConteudo());
 		}
+		
 		System.out.println();
 	}
 	
 	
-	public static void painel() {
+	public void painel() {
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -98,18 +121,5 @@ public class PainelAdmin {
 			System.out.println();
 			painel();
 		}
-	}
-	
-	
-	public static void main(String[] args) {
-		//teste
-		
-		while(true) {
-			painel();
-		}
-	}
-	
-	
-	
-	
+	}	
 }

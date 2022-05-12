@@ -1,10 +1,6 @@
-package aplicacao;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
-import entidade.CriaPalavrasProibidas;
-import entidade.EncontraPalavrasProibidas;
 
 public class TestCriaEProcuraPalavrasProibidas {
 	
