@@ -11,4 +11,4 @@ Esse é o repositório do grupo criativamente chamado de 'Grupo 2', aqui fica o 
 ## Membros do Grupo
 
 - [Gustavo Vicentini Deon](https://www.github.com/Def4uIt)
-- 
+- [Pedro Carlo Brun Iglesias](https://github.com/PedroCIglesias)
