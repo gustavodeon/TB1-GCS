@@ -7,8 +7,6 @@ public class LogOcorrencias {
     // Método para registrar palavras proibidas, data e hora dentro de seu texto original
   
     private ArrayList<Log> log;
-
-<<<<<<< HEAD
     private static final String MyLog = null;
     private ArrayList<LogOcorrencias> log;
     private Usuario usuario;
@@ -24,11 +22,10 @@ public class LogOcorrencias {
         Logger myLogger = Logger.getLogger ( LogOcorrencias.class.getName ());
         myLogger.addHandler ( myHandler ) ;
         myLogger.info ( "Este é um evento log ");
-=======
+
     public void logOcorrencias(Log l) {
         log = new ArrayList<>();
         log.add(l);
->>>>>>> 0ddcd8702019aa3f989a18919037487417a756fb
     }
 
     public int getQtdeOcorrenciasLog(){
