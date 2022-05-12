@@ -20,6 +20,14 @@ public class LogOcorrencias {
         array.add(ocorrencias);
     }
 
+public String getOcorrencia(){
+    String frase = "";
+    for(int i=0; i<=array.size(); i++){
+        frase = frase + array.get(i).toString() + "\n";
+    }
+    return frase;
+}
+
     @Override
     public String toString() {
         return "Usuario" + usuario + " data postagem" + dataPostagem + " conteudo" + conteudo;
