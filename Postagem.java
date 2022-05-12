@@ -8,7 +8,7 @@ public class Postagem {
   private Date dataPostagem;
   private String conteudo;
   private ArrayList<String> tags;
-
+  private int likes;
   private String link;
 
   public Postagem(Usuario autor, Date dataPostagem, String conteudo, ArrayList<String> tags, String link){
@@ -17,6 +17,7 @@ public class Postagem {
     this.conteudo = conteudo;
     this.tags = tags;
     this.link = link;
+    this.likes = 0;
   }
 
   public Usuario getAutor() { return autor;}
@@ -25,6 +26,8 @@ public class Postagem {
   public Date getDataPostagem() {return dataPostagem;}
   public ArrayList<String> getTags() {return tags;}
   public int getTotalComentarios() { return getComentarios() == null ? 0 : getComentarios().size(); }
+  public void addlike() { likes++; }
+  public int getLikes() { return likes; }
 
   public boolean addComentario(Comentario comentario){
     // adiciona comentario
