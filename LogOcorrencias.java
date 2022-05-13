@@ -28,19 +28,22 @@ public String getOcorrencia(){
     return frase;
 }
 
-public Log getPorPosicao(int pos){
+public LogOcorrencias getPorPosicao(int pos){
     if (pos>=0 && pos<log.size()){
         return log.get(pos);
     }else{
         return null;
     }
 }
+public LogOcorrencias getPorUsuario(Usuario user){
 
+    
+}
+}
 @Override
     public String toString() {
-        return "Usuario" + usuario + " data postagem" + dataPostagem + " conteudo" + conteudo;
+        log.forEach((n) -> System.out.println(n));
         
-     
-    }
+ }
 
 }
