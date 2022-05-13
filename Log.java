@@ -8,5 +8,17 @@ public class Log {
         this.conteudo = conteudo;
         this.dataPostagem = dataPostagem;
     }
-    
+
+    public Usuario getUsuario(){
+        return usuario;
+    }
+    public String getPostagem(Usuario user){
+        return conteudo;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario" + usuario + " data postagem" + dataPostagem + " conteudo" + conteudo;
+
+    }
 }
