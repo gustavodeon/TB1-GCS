@@ -30,12 +30,14 @@ public class Postagem {
   public int getLikes() { return likes; }
 
   public boolean addComentario(Comentario comentario){
+    return false;
     // adiciona comentario
 	this.autor.addComentario();//arrumar posicao conforme a logica  
     return false;
   }
 
   public boolean removeComentario(int posicao, Usuario usuarioAtual) {
+    return false;
     //remove comentário
 	  
 	this.autor.removeComentario();//arrumar posicao conforme a logica  

@@ -23,6 +23,7 @@ public class Blog {
 
   }
 
+<<<<<<< HEAD
   private void mockData() {
     this.usuarios.add(new Usuario(1, "josé", true));
     this.usuarios.add(new Usuario(2, "Felipe", false));
@@ -164,10 +165,15 @@ public class Blog {
   }
 
   private boolean addUsuario(){
+=======
+  private boolean addUsuario(Usuario u){
+    return false;
+>>>>>>> dea4f2c10ac010c56f0ed7a3a920f7680b65134d
     //adiciona pessoa
     return false;
   }
 
+<<<<<<< HEAD
   private boolean addPostagem(){
     Scanner sc = new Scanner(System.in);
     String conteudo, link = null;
@@ -223,9 +229,15 @@ public class Blog {
         return tags;
       }
     }
+=======
+  private boolean addPostagem(Postagem p){
+    return false;
+    //adiciona postagem
+>>>>>>> dea4f2c10ac010c56f0ed7a3a920f7680b65134d
   }
 
   private boolean removePostagem(int posicao) {
+    return false;
     //remove postagem
 	this.usuarioAtual.removePostagem();//arrumar posicao conforme a logica  
     return false;
