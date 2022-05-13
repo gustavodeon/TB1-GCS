@@ -21,4 +21,7 @@ public class Log {
         return "Usuario" + usuario + " data postagem" + dataPostagem + " conteudo" + conteudo;
 
     }
+
+    public void add(Log log) {
+    }
 }

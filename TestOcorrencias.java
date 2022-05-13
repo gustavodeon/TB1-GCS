@@ -10,8 +10,9 @@ public static void main (String[]args){
     ts.armazena(new Log(user2, "morango", "2022-05-01"));
     ts.armazena(new Log(user1, "banana", "2022-05-01"));
     ts.armazena(new Log(user2, "bergamota", "2022-05-01"));
+    System.out.println("log:");
+    for(int i=0;i<ts.getQuantidadeOcorrencias(); i++) {
+        System.out.println("ocorr"+ ts.getPorPosicao(i));
+    }
 }
-
-
-
 }

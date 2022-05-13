@@ -35,15 +35,5 @@ public LogOcorrencias getPorPosicao(int pos){
         return null;
     }
 }
-public LogOcorrencias getPorUsuario(Usuario user){
-
-    
-}
-}
-@Override
-    public String toString() {
-        log.forEach((n) -> System.out.println(n));
-        
- }
 
 }
