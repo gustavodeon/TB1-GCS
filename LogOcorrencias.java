@@ -28,6 +28,14 @@ public String getOcorrencia(){
     return frase;
 }
 
+public Log getPorPosicao(int pos){
+    if (pos>=0 && pos<log.size()){
+        return log.get(pos);
+    }else{
+        return null;
+    }
+}
+
 @Override
     public String toString() {
         return "Usuario" + usuario + " data postagem" + dataPostagem + " conteudo" + conteudo;
