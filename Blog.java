@@ -29,7 +29,7 @@ public class Blog {
     this.usuarios.add(new Usuario(3, "Pedro", false));
     this.usuarios.add(new Usuario(4, "Otavio", false));
     this.usuarios.add(new Usuario(5, "Irving", true));
-    this.usuarios.add(new Usuario(6, "José", true));
+    this.usuarios.add(new Usuario(6, "Jose", true));
     Postagem p1 = new Postagem(this.usuarios.get(0), new Date(), "Conteudo da postagem 1", null, null);
     this.postagens.add(p1);
     Postagem p2 = new Postagem(this.usuarios.get(3), new Date(), "Conteudo da postagem 2", null, null);

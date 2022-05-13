@@ -101,10 +101,10 @@ public class PainelAdmin {
 		System.out.println("Painel Do Administrador: ");
 		System.out.println("1 - Listar Total de posts, total de comentarios, total de usuarios");
 		System.out.println("2 - Ranking dos top 5 usuarios com mais postagens");
-		System.out.println("3 - Ranking dos top 10 usuarios com mais comentários");
+		System.out.println("3 - Ranking dos top 10 usuarios com mais comentï¿½rios");
 		System.out.println("4 - Ranking das top 5 postagens mais comentadas");
 		System.out.println();
-		System.out.println("Digite a opção desejada:");
+		System.out.println("Digite a opï¿½ï¿½o desejada:");
 		
 		int op = sc.nextInt();
 		
@@ -117,7 +117,7 @@ public class PainelAdmin {
 		else if(op == 4)
 			opcao4();
 		else {
-			System.out.println("Digite uma opção valida");
+			System.out.println("Digite uma opcao valida");
 			System.out.println();
 			painel();
 		}

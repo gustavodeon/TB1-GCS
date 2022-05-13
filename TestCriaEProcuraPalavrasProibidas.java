@@ -9,7 +9,7 @@ public class TestCriaEProcuraPalavrasProibidas {
 		CriaPalavrasProibidas cria = new CriaPalavrasProibidas();
 		cria.criacaoPalavrasProividas(palavrasProibidas);
 		
-		System.out.println("Informe qual palavra você deseja mudar ou digite \"X\" para cancelar: ");
+		System.out.println("Informe qual palavra voce deseja mudar ou digite \"X\" para cancelar: ");
 		Scanner sc = new Scanner(System.in);
 		String test = sc.nextLine();
 		if(!test.toUpperCase().equals("X")) {
