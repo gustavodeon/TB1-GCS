@@ -3,13 +3,46 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class Blog {
-  ArrayList<Usuario>  usuarios;
-  ArrayList<Postagem> postagens;
-  Usuario             usuarioAtual;
+  protected ArrayList<Usuario> usuarios;
+  protected ArrayList<Postagem> postagens;
+  protected Usuario usuarioAtual;
+  protected ArrayList<String> palavrasProibidas;
+  private RegrasNegocio rN;
 
   public Blog(){
     this.usuarios = new ArrayList<Usuario>();
     this.postagens = new ArrayList<Postagem>();
+    this.palavrasProibidas = new ArrayList<String>();
+    this.rN = new RegrasNegocio();
+  }
+  
+  private Retorno<ArrayList<Postagem>> buscaPostagens(Usuario user){ //busca postagens do usuario
+    ArrayList<Postagem> postagensUser = new ArrayList<Postagem>();
+    for(Postagem p: postagens){
+      if(p.getAutor().getId()==user.getId()){
+        postagensUser.add(p);
+      }
+    }
+    return new Retorno<ArrayList<Postagem>>(true,"Consultado com sucesso!",postagensUser);
+  }
+
+  private Retorno<ArrayList<Postagem>> buscaPostagens(String chave){ //busca postagem por palavra chave
+    if(rN.procurarPalavrasProibidas(chave)){
+      return new Retorno<ArrayList<Postagem>>(false,"Palavra proibida!");
+    }
+    ArrayList<Postagem> postagensPalavraChave = new ArrayList<Postagem>();
+    for(Postagem p: postagens){
+      if(p.getConteudo().toLowerCase().contains(chave.toLowerCase())){
+        postagensPalavraChave.add(p);
+      }else{
+        for(String s: p.getTags()){
+          if(s.equalsIgnoreCase(chave)){
+            postagensPalavraChave.add(p);
+          }
+        }
+      }
+    }
+    return new Retorno<ArrayList<Postagem>>(true,"Consultado com sucesso!",postagensPalavraChave);
   }
 
   public void inicalizar(){
@@ -29,7 +62,7 @@ public class Blog {
     this.usuarios.add(new Usuario(3, "Pedro", false));
     this.usuarios.add(new Usuario(4, "Otavio", false));
     this.usuarios.add(new Usuario(5, "Irving", true));
-    this.usuarios.add(new Usuario(6, "José", true));
+    this.usuarios.add(new Usuario(6, "Josï¿½", true));
     Postagem p1 = new Postagem(this.usuarios.get(0), new Date(), "Conteudo da postagem 1", null, null);
     this.postagens.add(p1);
     Postagem p2 = new Postagem(this.usuarios.get(3), new Date(), "Conteudo da postagem 2", null, null);
